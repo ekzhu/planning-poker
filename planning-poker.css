@@ -1,0 +1,27 @@
+.container-fluid {
+    margin-top: 20px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.stage {
+    height: 500px;
+    margin: 0px 20px 20px 0px;
+}
+
+.card-list {
+    margin: 0px 20px 20px 0px;
+}
+
+.player-vote {
+    font-size: 36px;
+}
+
+.player.selected {
+    background-color: yellow;
+}
+
+.card.selected .btn {
+    border: 3px black solid;
+}

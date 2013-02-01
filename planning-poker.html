@@ -1,0 +1,88 @@
+<head>
+  <title>Planning Poker</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+        <div class="main span10">
+            <div class="row">
+                {{> stage}}
+            </div>
+            <div class="row">
+                {{> card_board}}
+            </div>
+        </div>
+        <div class="sidebar span2">
+            <div class="row">
+                {{> join_game}}
+            </div>
+            <div class="row">
+                {{> current_players}}
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+
+<template name="stage">
+    <div class="stage well">
+        {{#if everyone_voted}}
+            <div class="row-fluid">
+            {{#each players}}
+                {{> player_vote}}
+            {{/each}}
+            </div>
+            <div class="row span10">
+                <input type="button" class="clear-votes" value="Clear Votes" />
+            </div>
+        {{/if}}
+    </div>
+</template>
+
+<template name="player_vote">
+    <div class="player-vote span3">
+        <span class="name">{{name}}</span>: 
+        <span class="vote">{{vote.name}}</span>
+    </div>
+</template>
+
+<template name="join_game">
+  <div class="join-game well">
+    <input type="text" id="player-name-input" class="span12" placeHolder="Enter your name" />
+    <input type="button" class="join btn btn-primary" value="Join the game!" />
+  </div>
+</template>
+
+<template name="current_players">
+    <div class="current-players">
+        <h5>Current Players</h5>
+        <table class="table table-condensed">
+        {{#each players}}
+          {{> player}}
+        {{/each}}
+        </table>
+    </div>
+</template>
+
+<template name="player">
+  <tr class="player {{selected}}">
+    <td class="span10">{{name}}</td>
+    <td class="span2"><input type="button" class="remove-player btn btn-mini" value="X" /></td>
+  </tr>
+</template>
+
+<template name="card_board">
+    <div class="card-list row-fluid">
+        {{#each cards}}
+            {{> card}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="card">
+    <div class="card {{selected}} span1">
+        <input type="button" class="vote btn" value="{{name}}" />
+    </div>
+</template>
+
