@@ -1,11 +1,17 @@
 // Set up a collection to contain player information. On the server,
 // it is backed by a MongoDB collection named "players".
 
+// All players
 Players = new Meteor.Collection("players");
+// A static collection of cards
+// I'd like to use datastore instead of static array because we might need to update them in the future.
 Cards = new Meteor.Collection("cards");
+// Store messages for each room
 Messages = new Meteor.Collection("messages");
+// At the moment, room functionality is not in place. So we use the only room globally.
 CurrRoom = 1;
 
+// Used to initialize cards
 CardNames = ['0', '1/2', '1', '2', '3', '5', '8', '13', '20', '40', '100', '?'];
 CardValues = [0, 1/2, 1, 2, 3, 5, 8, 13, 20, 40, 100, -1];
 NullCard = {name: "Empty", value: -1000};
@@ -14,8 +20,11 @@ function getAllPlayers() {
     return Players.find({}, {sort: {name: 1}});
 };
 
+// Refactor needed
+// We should separate client and server, and put functions in common module
 if (Meteor.isClient) {
   
+  // Each player's own session, reset at loading page
   Session.set("current_player", null);
   
   Template.stage.players = getAllPlayers();
@@ -104,6 +113,7 @@ if (Meteor.isServer) {
         }
     }
     if (Messages.find().count() === 0) {
+      // Insert the first message for a given room
       Messages.insert({content: "Welcome to Planning Poker!", room: CurrRoom});
     }
   });
