@@ -3,7 +3,7 @@ Planning Poker
 
 **The repository has been moved to bitbucket: [planning-poker](https://bitbucket.org/ekzhu/planning-poker)**
 
-This repository will still be updated with stable versions.
+All future development work will happen there.
 
 Get Started
 -----------
