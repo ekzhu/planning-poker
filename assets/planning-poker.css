@@ -1,0 +1,193 @@
+
+@media (max-width: 900px) {
+    .row-fluid .main, .row-fluid .sidebar {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.stretcher {
+    min-height: 500px;
+}
+
+.container-fluid {
+    margin-top: 20px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.stage {
+    height: auto;
+}
+
+.note {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 19px;
+}
+
+.in-game .current {
+    font-size: 16pt;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.in-game .observe-checkbox {
+    text-align: center;
+}
+
+.stage.well {
+    padding: 19px 9px 0;
+}
+
+.vote-wrap {
+    float: left;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/ IE 8+ */
+    padding: 0 10px;
+    width: 25%
+}
+
+.player-vote {
+    display: block;    
+    height: 120px;
+    border: 1px #000 solid;
+    border-radius: 4px;
+    margin-bottom: 19px;
+}
+
+.player-vote.observer-vote {
+    color: #ccc;
+    border-color: #ccc;
+}
+
+.player-vote .vote {
+    display: block;
+    height: 40px;
+    margin: 33px auto 0px auto;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.player-vote .name {
+    display: block;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    font-style: italic;
+    font-size: 18pt;
+}
+
+.player-vote .clear-votes {
+    display: block;
+    margin: 45px auto 0px auto;
+    text-align: center;
+}
+.player-vote.stage-control {
+    border: 1px #000 dashed;
+}
+
+.player.selected {
+    background-color: yellow;
+}
+
+.card-list-container {
+	position: relative;
+}
+
+.card-list {
+	margin: 0 -10px;
+}
+
+.card {
+    display: block;
+    height: 90px;
+    margin-bottom: 18px;
+    float: left;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/ IE 8+ */
+    padding: 0 10px;
+	width: 25%
+}
+
+@media (max-width: 767px) and (min-width: 501px) {
+    .card, .vote-wrap {
+        width: 33.33333%;
+    }
+}
+
+@media (max-width: 500px) and (min-width: 301px) {
+    .card {
+        width: 50%;
+    }
+    .vote-wrap {
+        width: 100%;
+    }
+}
+
+@media (max-width: 300px) {
+    .card, .vote-wrap {
+        width: 100%;
+    }
+}
+
+.card .btn {
+    width: 100%;
+    height: 100%;
+    font-size: 36px;
+    font-weight: bold;
+    color: #888;
+    text-shadow: 0 -1px 1px #444, 0 1px 1px #fff;
+}
+
+#player-name-input {
+    height: 36px;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.existing-room {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.existing-room:hover {
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.existing-room.selected {
+    background-color: #08c;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.existing {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/ IE 8+ */
+    width: 100%;
+}
+
+.modal-backdrop {
+    background-color: #444;
+    opacity: 1;
+}
+
+.modal-backdrop.fade.in {
+    opacity: 1;
+}
+
+.usage {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .modal {
+        position: absolute;
+    }
+}

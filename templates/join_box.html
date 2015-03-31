@@ -1,0 +1,47 @@
+<template name="join_box">
+    {{#if notJoined}}
+    <div id="join-box" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="join-box-label" aria-hidden="false">
+      <div class="modal-header">
+        <h3 id="join-box-label">Welcome to Planning Poker</h3>
+      </div>
+      <div class="modal-body">
+        <div class="row-fluid">
+            <div class="control-group">
+                <div class="controls lead">
+                    <input type="text" id="player-name-input" class="span12" placeHolder="Enter your name" />
+                </div>
+            </div>
+        </div>
+        {{#if anyRooms}}
+        <div class="row-fluid"><h4>Choose a room to join</h4></div>
+        {{> existing_rooms}}
+        {{/if}}
+        <div class="row-fluid">
+            <h4>{{#if anyRooms}}... or create a new one{{else}}Create a new room{{/if}}</h4>
+            <div class="control-group">
+                <div class="controls">
+                    <input type="text" id="room-name-input" class="span12" placeHolder="Enter a new room name" />
+                </div>
+            </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary start">Start planning</button>
+      </div>
+    </div>
+    <div class="modal-backdrop fade in"></div>
+    {{/if}}
+</template>
+
+<template name="existing_rooms">
+    <div class="row-fluid">
+        <select size="4" class="existing">
+        {{#each rooms}}
+            <option value="{{slug}}" {{#if selected}}selected="selected"{{/if}}>
+                {{name}}
+            </option>
+        {{/each}}
+        </select>
+    </div>
+</template>

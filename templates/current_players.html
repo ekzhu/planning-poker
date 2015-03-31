@@ -1,0 +1,38 @@
+<template name="current_players">
+    <div class="current-players well">
+        <h4>Current Planners</h4>
+        <table class="table">
+            <thead>
+                <th>Names</th>
+                <th>Voted</th>
+                <th></th>
+            </thead>
+            <tbody>
+            {{#each players}}
+              {{> player}}
+            {{/each}}
+            </tbody>        
+        </table>
+    </div>
+</template>
+
+<template name="player">
+  <tr class="player {{#if selected}}info{{/if}}">
+    <td class="span8">{{name}}{{#if selected}} (You){{/if}}</td>
+    <td class="span2">
+        {{#if observer}}
+        <i class="icon-eye-open"></i>
+        {{/if}}
+        {{#if voted}}
+        <i class="icon-ok"></i>
+        {{/if}}
+    </td>
+    <td class="span2">
+        {{#if selected}}
+            <input type="button" class="remove-player btn btn-mini disabled" value="X" />
+        {{else}}
+            <input type="button" class="remove-player btn btn-mini" value="X" />
+        {{/if}}
+    </td>
+  </tr>
+</template>

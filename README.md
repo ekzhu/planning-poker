@@ -1,9 +1,7 @@
 Planning Poker
 ==============
 
-**The repository has been moved to bitbucket: [planning-poker](https://bitbucket.org/ekzhu/planning-poker)**
-
-All future development work will happen there.
+The demo site: [planning-poker.meteor.com](http://planning-poker.meteor.com). It's using free host provided by Meteor.
 
 Get Started
 -----------
@@ -30,5 +28,4 @@ Helpful resource:
 3. [Twitter Bootstrap](http://twitter.github.com/bootstrap/) - we use this for UI
 
 ----
-
 This is an Orbis Access Free Friday project.

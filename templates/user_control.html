@@ -1,0 +1,13 @@
+<template name="user_control">
+    {{> in_game}}
+</template>
+
+<template name="in_game">
+    <div class="in-game well">
+        <div class="current">{{current_player}}</div>
+        <label class="checkbox">
+            <span class="observe-checkbox"></span><input type="checkbox" class="observe" {{#if isObserver}}checked="checked"{{/if}}/> Observer (not required to vote)</span>
+        </label>
+        <input type="button" class="leave btn span12" value="Leave planning" />
+    </div>
+</template>

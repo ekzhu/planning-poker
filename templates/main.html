@@ -1,0 +1,49 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning Poker</title>
+</head>
+
+<body>
+  {{> join_box}}
+  {{> main}}
+</body>
+
+<template name="main">
+    {{#if hasJoined}}
+    <div class="container-fluid">
+        {{> title}}
+        <div class="row-fluid">
+            <div class="row-fluid main span9">
+                <div class="row-fluid">
+                    {{> stage}}
+                </div>
+                <div class="row-fluid">
+                    {{> message}}
+                </div>
+                <div class="row-fluid" id="card-board">
+                    {{> card_board}}
+                </div>
+            </div>
+            <div class="sidebar span3">
+                <div class="row-fluid">
+                    {{> user_control}}
+                </div>
+                <div class="row-fluid">
+                    {{> current_players}}
+                </div>
+                <div class="row-fluid">
+                    <div class="span12 well usage">
+                        <a class="btn" href="https://bitbucket.org/ekzhu/planning-poker/wiki/Usage%20Guide" target="_blank">Usage Guide</a> and <a href="https://bitbucket.org/ekzhu/planning-poker" class="btn" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</template>
+
+<template name="title">
+    <div class="row-fluid">
+        <h1>{{roomName}} planning room</h1>
+    </div>
+</template>

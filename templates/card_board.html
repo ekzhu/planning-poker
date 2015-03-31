@@ -1,0 +1,15 @@
+<template name="card_board">
+    <div class="row-fluid card-list-container">
+		<div class="card-list">
+			{{#each cards}}
+				{{> card}}
+			{{/each}}
+		</div>
+    </div>
+</template>
+
+<template name="card">
+    <div class="card {{selected}}">
+        <input type="button" class="vote btn btn-large {{#if selected}}btn-inverse{{/if}}" value="{{name}}" />
+    </div>
+</template>

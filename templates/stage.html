@@ -1,0 +1,27 @@
+<template name="stage">
+    <div class="stage well">
+        {{#if everyone_voted}}
+            <div class="row-fluid vote-container">
+            {{#each players}}
+                {{> player_vote}}
+            {{/each}}
+                <div class="vote-wrap">
+                    <div class="player-vote stage-control">
+                        <input type="button" class="clear-votes btn btn-primary btn-danger" value="Clear Votes" />
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="note">Waiting for everyone to vote.</div>
+        {{/if}}
+    </div>
+</template>
+
+<template name="player_vote">
+    <div class="vote-wrap">
+        <div class="player-vote {{#if observer}}observer-vote{{/if}}">
+            <span class="vote">{{vote.name}}</span>
+            <span class="name">{{name}}</span>
+        </div>
+    </div>
+</template>
